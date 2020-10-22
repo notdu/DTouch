@@ -38,7 +38,8 @@ router.get("/:id", async (req, res) => {
     try {
         await User.find({ id })
             .then(data => {
-                res.send(data)
+
+                res.send(data[0])
             })
             .catch(err => {
                 console.log('errrrr', err)
